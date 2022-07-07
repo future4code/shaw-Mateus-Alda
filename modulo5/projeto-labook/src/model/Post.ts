@@ -1,26 +1,32 @@
 export enum PostType {
-    Normal = 'Normal',
-    Event = 'Event'
+    Normal = 'normal',
+    Event = 'event'
 }
 
 export class Post{
+    private created_at: Date
+    private total_likes: number
+
     constructor(
         private id: string,
         private description: string,
         private image: string,
-        private creation_date: string,
-        private postType: PostType,
+        private type: PostType,
         private user_id: string
-    ){}
+    ){
+        this.created_at = new Date()
+        this.total_likes = 0
+    }
 
     getPost(){
         return ({
             id: this.id,
             description: this.description,
             image: this.image,
-            creation_date: this.creation_date,
-            postType: this.postType,
-            user_id: this.user_id
+            created_at: this.created_at,
+            type: this.type,
+            user_id: this.user_id,
+            total_likes: this.total_likes
         })
     }
 }

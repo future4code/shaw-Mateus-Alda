@@ -1,8 +1,9 @@
-import { Post } from "../model/Post";
+import { Post, PostType } from "../model/Post";
+import { GetPostResponse } from "../types/GetPostResponse";
 import { BaseDatabase } from "./BaseDatabase";
 
 export default class PostData extends BaseDatabase {
-    private TABLE_NAME = ''
+    private TABLE_NAME = 'labook_posts'
 
     insert = async (post: Post) => {
         try {
@@ -17,12 +18,76 @@ export default class PostData extends BaseDatabase {
         }
     }
 
-    getById = async (id: string) => {
+    getAllPosts = async () => {
         try {
-            const [queryResult] = await this.connection(this.TABLE_NAME)
-                .where({id})
+            const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)
 
             return queryResult
+
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Database error.")
+            }
+        }
+    }
+
+    getPostById = async (id: string) => {
+        try {
+            const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)
+                .where({ id })
+
+            return queryResult[0]
+
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Database error.")
+            }
+        }
+    }
+
+    getPostsByType = async (type: PostType) => {
+        try {
+            const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)
+                .where({ type })
+
+            return queryResult
+
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Database error.")
+            }
+        }
+    }
+
+    getAllPostsFromUser = async (user_id: string) => {
+        try {
+            const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)
+                .where({ user_id })            
+
+            return queryResult
+
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Database error.")
+            }
+        }
+    }
+
+    updatePostLikes = async (id: string, total_likes: number) => {
+        try {
+            const affectedRows = await this.connection(this.TABLE_NAME)
+                .update({ total_likes })
+                .where({ id })            
+
+            return affectedRows
 
         } catch (error) {
             if (error instanceof Error) {

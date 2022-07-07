@@ -9,12 +9,12 @@ export default class PostController {
 
     createPost = async (req: Request, res: Response) => {
         const token = req.headers.authorization
-        const { description, image, postType } = req.body
+        const { description, image, type } = req.body
 
         const input: CreatePostInputDTO = {
             description,
             image,
-            postType
+            type
         }
         
         try {
@@ -29,14 +29,62 @@ export default class PostController {
         }
     }
 
-    getById = async (req: Request, res: Response) => {
+    getPostById = async (req: Request, res: Response) => {
         const token = req.headers.authorization
         const id = req.params.id
         
         try {
-            const post = await this.postBusiness.getById(token, id)
+            const post = await this.postBusiness.getPostById(token, id)
 
             res.send({ post })
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).send(error.message)
+            }
+            res.status(500).send("Post error.")
+        }
+    }
+
+    getPostsByType = async (req: Request, res: Response) => {
+        const token = req.headers.authorization
+        const type = req.query.type as string
+        
+        try {
+            const sortedPosts = await this.postBusiness.getPostsByType(token, type)
+
+            res.send({ sortedPosts })
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).send(error.message)
+            }
+            res.status(500).send("Post error.")
+        }
+    }
+
+    likePost = async (req: Request, res: Response) => {
+        const token = req.headers.authorization
+        const id = req.params.id
+        
+        try {
+            await this.postBusiness.likePost(token, id)
+
+            res.send({ message: "Post liked by user!" })
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).send(error.message)
+            }
+            res.status(500).send("Post error.")
+        }
+    }
+
+    dislikePost = async (req: Request, res: Response) => {
+        const token = req.headers.authorization
+        const id = req.params.id
+        
+        try {
+            await this.postBusiness.dislikePost(token, id)
+
+            res.send({ message: "Post disliked by user!" })
         } catch (error) {
             if (error instanceof Error) {
                 return res.status(400).send(error.message)
