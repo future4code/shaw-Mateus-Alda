@@ -65,6 +65,25 @@ export default class PostData extends BaseDatabase {
         }
     }
 
+    getFeed = async (userFriends: string[], limit: number, offset: number, order: string) => {
+        try {
+            const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)
+                .whereIn('user_id', userFriends)
+                .limit(limit)
+                .offset(offset)
+                .orderBy('created_at', order)
+
+            return queryResult
+            
+        } catch (error) {
+            if (error instanceof Error) {
+                throw new Error(error.message)
+            } else {
+                throw new Error("Database error.")
+            }
+        }
+    }
+
     getAllPostsFromUser = async (user_id: string) => {
         try {
             const queryResult: GetPostResponse[] = await this.connection(this.TABLE_NAME)

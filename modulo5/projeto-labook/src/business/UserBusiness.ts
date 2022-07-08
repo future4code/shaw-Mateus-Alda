@@ -1,4 +1,3 @@
-import { compareDesc } from "date-fns";
 import PostData from "../data/PostData";
 import UserData from "../data/UserData";
 import User from "../model/User";
@@ -149,26 +148,32 @@ export default class UserBusiness {
         return friend.name
     }
 
-    getFeed = async (token: string) => {
+    getFeed = async (token: string, page: number, size: number) => {
 
         const authenticationData = Authenticator.getTokenData(token)
+        const user = await this.userData.getById(authenticationData.id)
+
+        if (!user) {
+            throw new Error("User with this token does not exist.");
+        }
 
         if (!token) {
             throw new Error("Authentication token is missing.")
         }
+        if (!page || page < 1 || isNaN(page)) {
+            page = 1
+        }
+        if (!size || size < 5 || isNaN(size)) {
+            size = 5
+        }
+
+        const offset = (page - 1) * size
+        const order = 'DESC'
 
         const postData = new PostData()
-        const user = await this.userData.getById(authenticationData.id)
         const userFriends = JSON.parse(user.friends) as string[]
-        const feed: GetPostResponse[] = []
-        await Promise.all(userFriends.map(async (friend) => {
-            const posts = await postData.getAllPostsFromUser(friend)
-            for (const post of posts) {
-                feed.push(post)
-            }
-        }))
 
-        feed.sort((a, b) => compareDesc(a.created_at, b.created_at))
+        const feed: GetPostResponse[] = await postData.getFeed(userFriends, size, offset, order)
 
         return feed
     }

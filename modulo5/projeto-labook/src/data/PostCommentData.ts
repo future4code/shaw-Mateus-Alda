@@ -1,13 +1,14 @@
-import { PostLike } from "../model/PostLike";
+import { PostComment } from "../model/PostComment";
+import { GetCommentResponse } from "../types/getCommentResponse";
 import { BaseDatabase } from "./BaseDatabase";
 
-export default class PostLikeData extends BaseDatabase {
-    private TABLE_NAME = 'labook_post_like'
+export default class PostCommentData extends BaseDatabase {
+    private TABLE_NAME = 'labook_post_comment'
 
-    insert = async (postLike: PostLike) => {
+    insert = async (postComment: PostComment) => {
         try {
             await this.connection(this.TABLE_NAME)
-                .insert(postLike)
+                .insert(postComment)
             
         } catch (error) {
             if (error instanceof Error) {
@@ -18,10 +19,10 @@ export default class PostLikeData extends BaseDatabase {
         }
     }
     
-    delete = async (postLike: PostLike) => {
+    delete = async (id: string) => {
         try {
             await this.connection(this.TABLE_NAME)
-                .where(postLike)
+                .where({ id })
                 .delete()
         } catch (error) {
             if (error instanceof Error) {
@@ -32,12 +33,12 @@ export default class PostLikeData extends BaseDatabase {
         }
     }
 
-    findLikeByUser = async (postLike: PostLike) => {
+    getCommentById = async (id: string) => {
         try {
-            const queryResult = await this.connection(this.TABLE_NAME)
-                .where( postLike )
+            const queryResult: GetCommentResponse[] = await this.connection(this.TABLE_NAME)
+                .where({ id })
 
-            return queryResult.length > 0
+            return queryResult[0]
 
         } catch (error) {
             if (error instanceof Error) {

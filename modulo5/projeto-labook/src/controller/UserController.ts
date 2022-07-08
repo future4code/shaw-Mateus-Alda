@@ -87,9 +87,11 @@ export default class UserController{
 
     getFeed = async (req: Request, res: Response) => {
         const token = req.headers.authorization
+        const page = Number(req.query.page)
+        const size = Number(req.query.size)
         
         try {
-            const feed = await this.userBusiness.getFeed(token)
+            const feed = await this.userBusiness.getFeed(token, page, size)
 
             res.send({ feed })
         } catch (error) {
