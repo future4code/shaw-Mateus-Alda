@@ -48,6 +48,8 @@ class Migrations extends BaseDatabase {
             .then(() => { console.log("Tables created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -58,6 +60,8 @@ class Migrations extends BaseDatabase {
             .then(() => { console.log("Users created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -68,6 +72,8 @@ class Migrations extends BaseDatabase {
             .then(() => { console.log("Posts created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -78,6 +84,8 @@ class Migrations extends BaseDatabase {
             .then(() => { console.log("Post likes created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -88,15 +96,8 @@ class Migrations extends BaseDatabase {
             .then(() => { console.log("Post comments created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
-        }
-    }
-
-    closeConnection = async () => {
-        try {
+        } finally {
             this.connection.destroy()
-            .then(() => { console.log("Connection destroyed") })
-        } catch (error: any) {
-            console.log(error.sqlMessage || error.message)
         }
     }
 
@@ -107,7 +108,6 @@ class Migrations extends BaseDatabase {
             await this.insertPosts()
             await this.insertPostLikes()
             await this.insertPostComments()
-            await this.closeConnection()
 
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
