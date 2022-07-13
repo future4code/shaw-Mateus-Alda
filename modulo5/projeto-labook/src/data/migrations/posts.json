@@ -1,0 +1,137 @@
+[
+	{
+		"id" : "02102a38-4699-474e-9074-fdb39226b617",
+		"image" : "https://picsum.photos/200",
+		"description" : "Os exames estão aí! Tenho que estudar...",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:36:51",
+		"total_likes" : 0,
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "1215eafa-b6e2-428c-bd7e-0a5cfba1bc2c",
+		"image" : "image_url",
+		"description" : "Flood de post",
+		"type" : "event",
+		"created_at" : "2022-07-08 15:37:23",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "23000615-55e0-410f-ab15-3470c3cc49b9",
+		"image" : "image_url",
+		"description" : "Post interessante",
+		"type" : "normal",
+		"created_at" : "2022-07-07 00:00:00",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "2d0f4b55-788f-4b27-a2e3-47b2e66a8f79",
+		"image" : "https://picsum.photos/200",
+		"description" : "Ai minha cicatriz!",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:34:02",
+		"total_likes" : 1,
+		"user_id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de"
+	},
+	{
+		"id" : "330ad3fa-a7cf-4ca5-a7ce-c08eccc01417",
+		"image" : "image_url",
+		"description" : "Outro post",
+		"type" : "normal",
+		"created_at" : "2022-07-07 00:00:00",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "3d79d095-69f2-4619-8c26-2cacbee3bc86",
+		"image" : "https://picsum.photos/200",
+		"description" : "Essa Mione é demais!",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:32:54",
+		"total_likes" : 3,
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "44886965-bed3-4fea-8612-9a4083b44a92",
+		"image" : "image_url",
+		"description" : "Post de evento",
+		"type" : "event",
+		"created_at" : "2022-07-07 16:44:38",
+		"total_likes" : 1,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "56b6d69d-6887-41bf-bed2-d3d339793c42",
+		"image" : "https://picsum.photos/200",
+		"description" : "Voldy voltou!",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:35:37",
+		"total_likes" : 2,
+		"user_id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de"
+	},
+	{
+		"id" : "660c8cd5-0bc2-44e3-849e-16e558907da8",
+		"image" : "https://picsum.photos/200",
+		"description" : "Esse Rony é cheio de graça...",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:37:14",
+		"total_likes" : 2,
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "9b81e192-ed53-42ae-8efc-abac344540cd",
+		"image" : "image_url",
+		"description" : "Mais um post",
+		"type" : "normal",
+		"created_at" : "2022-07-07 11:48:03",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "9d1e601c-a2cb-44a5-9c1b-b4f3bdc193fe",
+		"image" : "https://picsum.photos/200",
+		"description" : "Passei no teste de goleiro! Vai Grifinória!",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:32:04",
+		"total_likes" : 3,
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "a3d4610b-eeb9-46a5-b6f3-9984d672fe52",
+		"image" : "https://picsum.photos/200",
+		"description" : "Odeio o Snape!",
+		"type" : "normal",
+		"created_at" : "2022-07-13 07:35:06",
+		"total_likes" : 2,
+		"user_id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de"
+	},
+	{
+		"id" : "a4b3f681-522e-407e-9065-b6e45a74726c",
+		"image" : "image_url",
+		"description" : "Precisa de mais?",
+		"type" : "normal",
+		"created_at" : "2022-07-08 15:37:44",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "aaa19778-20c3-4e2a-b4d4-63c45980f6ab",
+		"image" : "image_url",
+		"description" : "Vai que não para",
+		"type" : "normal",
+		"created_at" : "2022-07-08 16:12:02",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	},
+	{
+		"id" : "fd3e1013-a957-4c6a-bd1e-062cdda8a34d",
+		"image" : "image_url",
+		"description" : "Acho que foi",
+		"type" : "normal",
+		"created_at" : "2022-07-08 15:37:57",
+		"total_likes" : 0,
+		"user_id" : "27bb355d-a5f0-42e3-8419-c3deede9c034"
+	}
+]
