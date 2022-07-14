@@ -4,7 +4,7 @@ import User from "../model/User";
 import { Authenticator } from "../services/Authenticator";
 import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
-import { GetPostResponse } from "../types/GetPostResponse";
+import { GetPostResponse } from "../types/getPostResponse";
 import { LoginInputDTO } from "../types/loginInputDTO";
 import { SignupInputDTO } from "../types/signupInputDTO";
 
