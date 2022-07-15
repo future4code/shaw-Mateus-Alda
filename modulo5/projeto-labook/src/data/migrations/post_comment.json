@@ -1,0 +1,86 @@
+[
+	{
+		"id" : "02b417cf-f097-40d8-b092-89cfdb04770d",
+		"comment" : "Não fala esse nome!",
+		"post_id" : "56b6d69d-6887-41bf-bed2-d3d339793c42",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "098db227-ec59-4bbe-95bc-c126a90c017a",
+		"comment" : "É verdade!",
+		"post_id" : "56b6d69d-6887-41bf-bed2-d3d339793c42",
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "4f7c1091-e86b-41fd-a3b2-788519c53174",
+		"comment" : "Parabéns Rony! A Grifinória está em boas mãos agora!",
+		"post_id" : "9d1e601c-a2cb-44a5-9c1b-b4f3bdc193fe",
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "719968f2-2af8-4764-aefd-407ff8e8e9fb",
+		"comment" : "Vai ver o professor Dumbledore, Harry.",
+		"post_id" : "2d0f4b55-788f-4b27-a2e3-47b2e66a8f79",
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "77a4e069-ead9-437a-b212-d1995d97011a",
+		"comment" : "Ele é o pior!",
+		"post_id" : "a3d4610b-eeb9-46a5-b6f3-9984d672fe52",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "87e42af7-7108-4a75-a8e8-cd53589666ed",
+		"comment" : "Professor Snape, Harry.",
+		"post_id" : "a3d4610b-eeb9-46a5-b6f3-9984d672fe52",
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "8e2d15f7-70b0-4b08-87e3-d7933211acf8",
+		"comment" : "Será que ele tá por perto?",
+		"post_id" : "2d0f4b55-788f-4b27-a2e3-47b2e66a8f79",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "9253378e-42dd-469b-b7c5-04383c6bbaf6",
+		"comment" : "Muito interessante...",
+		"post_id" : "23000615-55e0-410f-ab15-3470c3cc49b9",
+		"user_id" : "35f65095-5883-4db8-8751-a0e9f8dcd84d"
+	},
+	{
+		"id" : "afdc14ea-4103-47fa-8b72-ab23d9281eb2",
+		"comment" : "Sua cabeça vai explodir se você estudar mais!",
+		"post_id" : "02102a38-4699-474e-9074-fdb39226b617",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "bdfd9f89-659d-4c97-aa1b-98ea08b20332",
+		"comment" : "Parabéns Rony! Você merece!",
+		"post_id" : "9d1e601c-a2cb-44a5-9c1b-b4f3bdc193fe",
+		"user_id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de"
+	},
+	{
+		"id" : "ceed7802-2c22-4b80-8a17-b8f0c8cd7d82",
+		"comment" : ";)",
+		"post_id" : "660c8cd5-0bc2-44e3-849e-16e558907da8",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	},
+	{
+		"id" : "df999b50-8f19-4c0e-bbc5-526b09f2489e",
+		"comment" : "Estudar mais?",
+		"post_id" : "02102a38-4699-474e-9074-fdb39226b617",
+		"user_id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de"
+	},
+	{
+		"id" : "f4a03b3f-f6e2-4f8f-961b-e2595fc6fbd1",
+		"comment" : ">.<",
+		"post_id" : "3d79d095-69f2-4619-8c26-2cacbee3bc86",
+		"user_id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf"
+	},
+	{
+		"id" : "f6b4eb3a-9d78-4d87-b0fd-fda05a36c1b8",
+		"comment" : "Obrigado gente!",
+		"post_id" : "9d1e601c-a2cb-44a5-9c1b-b4f3bdc193fe",
+		"user_id" : "87de328f-7778-4f9c-b5d0-cb49939209fb"
+	}
+]

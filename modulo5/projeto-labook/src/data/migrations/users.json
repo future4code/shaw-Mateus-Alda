@@ -1,0 +1,51 @@
+[
+	{
+		"id" : "27bb355d-a5f0-42e3-8419-c3deede9c034",
+		"name" : "Mateus",
+		"email" : "mateus@email.com",
+		"password" : "$2a$10$vMWiTXKFFjv8xxonXfvBFeqUZlsZWt87IQ86wpa5oXtIuUJ8EcHey",
+		"friends" : "[\"35f65095-5883-4db8-8751-a0e9f8dcd84d\"]"
+	},
+	{
+		"id" : "35f65095-5883-4db8-8751-a0e9f8dcd84d",
+		"name" : "Milly",
+		"email" : "milly@email.com",
+		"password" : "$2a$10$XVbuxm9RHeBG1Oe/R99Rw..5ePAQouvroL6JPzCfbGC1i7RTCvdsW",
+		"friends" : "[\"27bb355d-a5f0-42e3-8419-c3deede9c034\"]"
+	},
+	{
+		"id" : "3fa0eb3e-4f3c-4340-bba6-01bd22c5f609",
+		"name" : "jhon doe",
+		"email" : "jd@email.com",
+		"password" : "$2a$10$4IE4R05/8QPb6InJNLtjoO7ioqbQlVhISwFw3iUBXiex7Je8Flm4O",
+		"friends" : "[]"
+	},
+	{
+		"id" : "87de328f-7778-4f9c-b5d0-cb49939209fb",
+		"name" : "Ron Weasley",
+		"email" : "rony@email.com",
+		"password" : "$2a$10$IpvW2WLMaGku7GYMKGBeWOcp3Exd/pBS3RXAffGrFX/npzzb12eeC",
+		"friends" : "[\"9daeb644-6fc1-43a3-8da0-c9f89896a1bf\", \"ab8d0b0c-94bb-4357-bdf0-150ed09fd2de\"]"
+	},
+	{
+		"id" : "9daeb644-6fc1-43a3-8da0-c9f89896a1bf",
+		"name" : "Hermione Granger",
+		"email" : "mione@email.com",
+		"password" : "$2a$10$b6pN4Ye3YDh5jiUuZg7iOOwyu4KDJ3Si/lijQ1gr7nyi3xL1Iwpvu",
+		"friends" : "[\"ab8d0b0c-94bb-4357-bdf0-150ed09fd2de\", \"87de328f-7778-4f9c-b5d0-cb49939209fb\"]"
+	},
+	{
+		"id" : "ab8d0b0c-94bb-4357-bdf0-150ed09fd2de",
+		"name" : "Harry Potter",
+		"email" : "hp@email.com",
+		"password" : "$2a$10$pd9kjGdx/DbmoVXe1HWqO.ZuCi3hNYghg.S/p7jeYpEnl6qElLmEu",
+		"friends" : "[\"9daeb644-6fc1-43a3-8da0-c9f89896a1bf\", \"87de328f-7778-4f9c-b5d0-cb49939209fb\"]"
+	},
+	{
+		"id" : "fef3b55e-3490-4f5f-9463-0faa4024038e",
+		"name" : "jane doe",
+		"email" : "msjd@email.com",
+		"password" : "$2a$10$vkUg3WLCnPeJXJGEQp8Pwe5EBhen3RBrw8HqqtBwhxYGL7K3UJFCq",
+		"friends" : "[]"
+	}
+]
