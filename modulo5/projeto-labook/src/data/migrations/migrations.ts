@@ -49,6 +49,8 @@ class Migrations extends BaseDatabase {
                 .then(() => { console.log("Tables created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -59,6 +61,8 @@ class Migrations extends BaseDatabase {
                 .then(() => { console.log("Users created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -69,6 +73,8 @@ class Migrations extends BaseDatabase {
                 .then(() => { console.log("Posts created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
@@ -79,6 +85,8 @@ class Migrations extends BaseDatabase {
                 .then(() => { console.log("Post likes created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
+        } finally {
+            this.connection.destroy()
         }
     }
 
