@@ -12,6 +12,7 @@ export abstract class BaseDatabase {
             database: process.env.DB_SCHEMA,
             port: 3306,
             multipleStatements: true
-        }
+        },
+        pool: { min: 0, max: 7 }
     })
 }

@@ -7,8 +7,7 @@
     "dev": "clear && ts-node-dev ./src/index.ts",
     "start": "tsc && node ./build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrations": "tsc && node ./build/data/migrations/migrations.js",
-    "migrations2": "tsnd ./src/data/migrations/migrations.ts"
+    "migrations": "tsc && node ./build/data/migrations/migrations.js"
   },
   "keywords": [],
   "author": "",

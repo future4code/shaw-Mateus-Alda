@@ -4,10 +4,11 @@ import posts from "./posts.json"
 import post_like from "./post_like.json"
 import post_comment from "./post_comment.json"
 
+
 class Migrations extends BaseDatabase {
     createTables = async () => {
         try {
-            this.connection.raw(`
+            await this.connection.raw(`
 
                 CREATE TABLE IF NOT EXISTS labook_users(
                     id VARCHAR(255) PRIMARY KEY,
@@ -45,7 +46,7 @@ class Migrations extends BaseDatabase {
                 );
 
             `)
-            .then(() => { console.log("Tables created") })
+                .then(() => { console.log("Tables created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
         } finally {
@@ -55,9 +56,9 @@ class Migrations extends BaseDatabase {
 
     insertUsers = async () => {
         try {
-            this.connection('labook_users')
-            .insert({users})
-            .then(() => { console.log("Users created") })
+            await this.connection('labook_users')
+                .insert(users)
+                .then(() => { console.log("Users created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
         } finally {
@@ -67,9 +68,9 @@ class Migrations extends BaseDatabase {
 
     insertPosts = async () => {
         try {
-            this.connection('labook_posts')
-            .insert({posts})
-            .then(() => { console.log("Posts created") })
+            await this.connection('labook_posts')
+                .insert(posts)
+                .then(() => { console.log("Posts created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
         } finally {
@@ -79,9 +80,9 @@ class Migrations extends BaseDatabase {
 
     insertPostLikes = async () => {
         try {
-            this.connection('labook_post_like')
-            .insert({post_like})
-            .then(() => { console.log("Post likes created") })
+            await this.connection('labook_post_like')
+                .insert(post_like)
+                .then(() => { console.log("Post likes created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
         } finally {
@@ -91,28 +92,23 @@ class Migrations extends BaseDatabase {
 
     insertPostComments = async () => {
         try {
-            this.connection('labook_post_comment')
-            .insert({post_comment})
-            .then(() => { console.log("Post comments created") })
+            await this.connection('labook_post_comment')
+                .insert(post_comment)
+                .then(() => { console.log("Post comments created") })
         } catch (error: any) {
             console.log(error.sqlMessage || error.message)
-        } finally {
-            this.connection.destroy()
         }
     }
 
-    migrate = async () => {
-        try {
-            await this.createTables()
-            await this.insertUsers()
-            await this.insertPosts()
-            await this.insertPostLikes()
-            await this.insertPostComments()
-
-        } catch (error: any) {
-            console.log(error.sqlMessage || error.message)
-        }
+    closeConnection = async () => {
+        this.connection.destroy()
     }
 }
 
-new Migrations().migrate()
+const migrations = new Migrations()
+migrations.createTables()
+.then(migrations.insertUsers)
+.then(migrations.insertPosts)
+.then(migrations.insertPostLikes)
+.then(migrations.insertPostComments)
+.then(migrations.closeConnection)

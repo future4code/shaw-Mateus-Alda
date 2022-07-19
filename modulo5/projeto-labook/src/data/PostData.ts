@@ -1,5 +1,5 @@
 import { Post, PostType } from "../model/Post";
-import { GetPostResponse } from "../types/GetPostResponse";
+import { GetPostResponse } from "../types/getPostResponse";
 import { BaseDatabase } from "./BaseDatabase";
 
 export default class PostData extends BaseDatabase {
