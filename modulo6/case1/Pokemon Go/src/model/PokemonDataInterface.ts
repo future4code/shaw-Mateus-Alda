@@ -1,6 +1,13 @@
+import { FilterPokemonDataInputDTO } from "../types/filterPokemonDataInputDTO";
 import { GetFullPokemonResponse } from "../types/getFullPokemonResponse";
-import { GetPokemonPaginationDataInputDTO } from "../types/getPokemonPaginationDataInputDTO";
+import { PokemonDataInputDTO } from "../types/pokemonDataInputDTO";
+import { SearchPokemonDataInputDTO } from "../types/searchPokemonDataInputDTO";
 
 export interface PokemonDataInterface {
-    getAllPokemon: (dataInput: GetPokemonPaginationDataInputDTO) => Promise<GetFullPokemonResponse[]>
+    getAllPokemon: (dataInput: PokemonDataInputDTO) => Promise<GetFullPokemonResponse[]>
+
+    getPokemonByFilter: (dataFilterInput: FilterPokemonDataInputDTO) => Promise<GetFullPokemonResponse[]>
+    
+    getPokemonNameSearch: (searchInput: SearchPokemonDataInputDTO) => Promise<GetFullPokemonResponse[]>
+
 }

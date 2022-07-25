@@ -1,14 +1,15 @@
 import { PokemonDataInterface } from "../model/PokemonDataInterface";
 import { tableName } from "../model/tableName";
-import { FilterInput } from "../types/filterInput";
+import { FilterPokemonDataInputDTO } from "../types/filterPokemonDataInputDTO";
 import { GetFullPokemonResponse } from "../types/getFullPokemonResponse";
-import { GetPokemonPaginationDataInputDTO } from "../types/getPokemonPaginationDataInputDTO";
+import { PokemonDataInputDTO } from "../types/pokemonDataInputDTO";
+import { SearchPokemonDataInputDTO } from "../types/searchPokemonDataInputDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
 export default class PokemonData extends BaseDatabase implements PokemonDataInterface {
     private TABLE_NAME: string = tableName
 
-    getAllPokemon = async (dataInput: GetPokemonPaginationDataInputDTO) => {
+    getAllPokemon = async (dataInput: PokemonDataInputDTO) => {
         const { size, offset, orderBy, orderDirection } = dataInput
         try {
             const queryResult: GetFullPokemonResponse[] = await this.connection(this.TABLE_NAME)
@@ -27,10 +28,14 @@ export default class PokemonData extends BaseDatabase implements PokemonDataInte
         }
     }
 
-    getPokemonByPartialName = async (name: string) => {
+    getPokemonNameSearch = async (searchInput: SearchPokemonDataInputDTO) => {
+        const { size, offset, orderBy, orderDirection, search } = searchInput
         try {
             const queryResult: GetFullPokemonResponse[] = await this.connection(this.TABLE_NAME)
-                .whereILike('name', `%${name}%`)
+                .whereILike('name', `%${search}%`)
+                .limit(size)
+                .offset(offset)
+                .orderBy(orderBy, orderDirection)
 
             return queryResult
 
@@ -43,11 +48,14 @@ export default class PokemonData extends BaseDatabase implements PokemonDataInte
         }
     }
 
-    getPokemonByFilter = async (filterInput: FilterInput) => {
-        const { propertyToFilterBy, filter } = filterInput
+    getPokemonByFilter = async (filterInput: FilterPokemonDataInputDTO) => {
+        const { size, offset, orderBy, orderDirection, propertyToFilterBy, dataFilter } = filterInput
         try {
             const queryResult: GetFullPokemonResponse[] = await this.connection(this.TABLE_NAME)
-                .where(propertyToFilterBy, filter)
+                .where(propertyToFilterBy, dataFilter)
+                .limit(size)
+                .offset(offset)
+                .orderBy(orderBy, orderDirection)
 
             return queryResult
 

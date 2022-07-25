@@ -1,6 +1,6 @@
 import { tableColumn } from "./columnTypes"
 
-export type FilterInput = {
+export type DataFilterInput = {
     propertyToFilterBy: tableColumn
-    filter: string | null
+    filter: string | number | null
 }
