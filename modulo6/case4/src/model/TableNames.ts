@@ -1,0 +1,1 @@
+export const productTableName = 'products_amaro'
